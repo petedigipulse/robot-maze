@@ -16,9 +16,9 @@ function Maze(width, height) {
 	for (x=1; x <= width; x += 1) {
 		this.spaces[x] = [];
 		for (y=1; y <= height; y += 1) {
-			this.spaces[x][y] = "(" + x + "," + y + ")";
+			this.spaces[x][y] = new MazeSpace();
 		}
-		
+
 	};
 };
 
@@ -32,3 +32,9 @@ Maze.prototype.setEnd = function(x, y) {
 	this.endY = y;
 	this.endX = x; 
 };
+
+Maze.prototype.setWall = function(x, y, direction) {
+	if (x > 0 && x <= this.width)  {
+		this.spaces[x][y].setWall(direction);
+	}
+}
