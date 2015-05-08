@@ -21,3 +21,4 @@ Take out the "(" + x + "," + y + ")"; & replace with [x] & [Y] = new MazeSpace
 Set walls
 create MazeSpace proto with parameter of direction 
 set to this.[element] = true in other words "North" 'South' etc
+
